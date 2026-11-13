@@ -1,0 +1,27 @@
+[project]
+name = "wordview"
+version = "0.1.0"
+description = "A .docx viewer that stays close to Word's layout, with zoom, page navigation, PDF export and printing."
+readme = "README.md"
+authors = [
+    { name = "meebox", email = "meebox@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "fonttools>=4.68.0",
+    "pyside6>=6.12.0",
+]
+
+[project.scripts]
+wordview = "wordview:main"
+
+[build-system]
+requires = ["uv_build>=0.13.7,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pypdf>=7.1.0",
+    "pytest>=9.2.0",
+    "python-docx>=1.2.0",
+]

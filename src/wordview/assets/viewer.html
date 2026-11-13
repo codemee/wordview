@@ -1,0 +1,23 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+  html,body{margin:0;background:#808080}
+  #c{transform-origin:0 0}
+  /* 模擬 Word 的「中英文／中文與數字自動加間距」(autoSpaceDE/DN) */
+  .docx-wrapper{text-autospace:normal}
+  .docx-wrapper{background:#808080 !important;padding:16px !important}
+  .docx-wrapper>section.docx{margin-bottom:16px !important;box-shadow:0 0 6px rgba(0,0,0,.5)}
+  /* Word 不會在表格儲存格內畫段落的左右邊框（如「8表格」樣式的雙線） */
+  .docx-wrapper table p{border-left:none !important;border-right:none !important}
+  @media print{
+    html,body{background:none}
+    #c{zoom:1 !important}
+    .docx-wrapper{background:none !important;padding:0 !important}
+    .docx-wrapper>section.docx{margin:0 !important;box-shadow:none !important;break-after:page}
+  }
+</style></head>
+<body><div id="c"></div>
+<script src="jszip.min.js"></script>
+<script src="docx-preview.min.js"></script>
+<script src="viewer.js"></script>
+</body></html>
