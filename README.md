@@ -6,7 +6,23 @@
 
 ## 安裝與執行
 
-需要 [uv](https://docs.astral.sh/uv/) 與 Python 3.12 以上。
+### 系統需求
+
+- **作業系統**：Windows 10／11（64 位元）。僅在 Windows 11 上測試過。
+- **[uv](https://docs.astral.sh/uv/)**：用來建立環境與安裝套件。
+- **Python 3.12 以上**：`uv sync` 會依 `.python-version` 自動下載，不必另外安裝。
+- **Python 套件**：由 `uv sync` 自動安裝 PySide6（內含 QtWebEngine 與 Chromium）與 fonttools，不需另外安裝瀏覽器或 Qt；PySide6 體積較大，首次安裝需要一些時間。
+- **不需要**：Word／Office／LibreOffice、網路連線（docx-preview 與 JSZip 已內附）、顯示卡加速。
+
+影響外觀的選配項目：
+
+- **新細明體（PMingLiU）與 Times New Roman**：Windows 繁體中文版內建。缺少時會退回備用字型，版面與 Word 的差異會變大。
+- **雲端字型（如 Aptos）**：文件若使用，需先在這台電腦下載過（開啟過 Word 即會下載），否則英文退回其他字型。僅 Windows 有效。
+- **印表機驅動程式**：僅「列印」需要；「匯出 PDF」不需要。
+
+macOS／Linux 未測試：PySide6 支援這兩個系統，程式理論上可執行，但上述字型通常不存在，版面差異較大；Linux 另需安裝系統圖形函式庫（如 xcb 相關套件）。
+
+### 執行
 
 ```
 uv sync

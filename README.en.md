@@ -6,7 +6,23 @@ A `.docx` viewer built with PySide6 + QtWebEngine + [docx-preview](https://githu
 
 ## Install and run
 
-Requires [uv](https://docs.astral.sh/uv/) and Python 3.12 or later.
+### Requirements
+
+- **OS**: Windows 10 / 11 (64-bit). Only tested on Windows 11.
+- **[uv](https://docs.astral.sh/uv/)**: creates the environment and installs packages.
+- **Python 3.12 or later**: `uv sync` downloads it automatically according to `.python-version`; no separate install needed.
+- **Python packages**: `uv sync` installs PySide6 (bundles QtWebEngine and Chromium) and fonttools. No separate browser or Qt install is needed; PySide6 is large, so the first install takes a while.
+- **Not required**: Word / Office / LibreOffice, a network connection (docx-preview and JSZip are bundled), GPU acceleration.
+
+Optional items that affect appearance:
+
+- **PMingLiU (新細明體) and Times New Roman**: built into Traditional Chinese Windows. Without them, fallback fonts are used and the layout differs more from Word.
+- **Cloud fonts (e.g. Aptos)**: if a document uses them, they must already be downloaded on this machine (opening Word downloads them); otherwise Latin text falls back to another font. Windows only.
+- **Printer driver**: only needed for printing; PDF export does not need one.
+
+macOS / Linux are untested: PySide6 supports both so the program should run, but the fonts above are usually missing and the layout differs more. Linux also needs system graphics libraries (e.g. xcb-related packages).
+
+### Run
 
 ```
 uv sync
